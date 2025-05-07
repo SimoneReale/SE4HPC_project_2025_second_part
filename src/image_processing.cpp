@@ -1,6 +1,13 @@
-#include "image_processing.hpp"
-#include <algorithm>
 #include <cmath>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <array>
+#include <string>
+#include <filesystem>
+#include <algorithm>
+#include "image_processing.hpp"
+
 
 void convertToGrayscale(const std::vector<std::vector<std::array<int, 3>>>& rgbImage,
                         std::vector<std::vector<int>>& grayscaleImage,
@@ -40,3 +47,5 @@ void convertToGrayscale(const std::vector<std::vector<std::array<int, 3>>>& rgbI
         }
     }
 }
+
+

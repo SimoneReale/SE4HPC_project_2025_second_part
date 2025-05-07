@@ -9,7 +9,8 @@ enum class GrayscaleMethod {
     Desaturation,
     RedChannel,
     GreenChannel,
-    BlueChannel
+    BlueChannel,
+    Invalid
 };
 
 void convertToGrayscale(const std::vector<std::vector<std::array<int, 3>>>& rgbImage,
