@@ -16,7 +16,7 @@ GrayscaleMethod stringToGrayscaleMethod(const std::string& method) {
     if (method == "Lightness") return GrayscaleMethod::Lightness;
     if (method == "Average") return GrayscaleMethod::Average;
     if (method == "Luminosity") return GrayscaleMethod::Luminosity;
-    if (method == "Desaturation") return GrayscaleMethod::Desaturation;
+    if (method == "RootMeanSquare") return GrayscaleMethod::RootMeanSquare;
     if (method == "RedChannel") return GrayscaleMethod::RedChannel;
     if (method == "GreenChannel") return GrayscaleMethod::GreenChannel;
     if (method == "BlueChannel") return GrayscaleMethod::BlueChannel;
@@ -92,7 +92,7 @@ int main(int argc, char* argv[]) {
                 continue;
             }
 
-            convertToGrayscale(colorImage, grayscaleImage, rows, cols, method);
+            convertToGrayscale(colorImage, rows, cols, method, grayscaleImage);
 
             std::string outputPath = fs::path(outputFolder) / entry.path().stem();
             outputPath += ".pgm";

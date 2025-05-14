@@ -6,7 +6,7 @@ enum class GrayscaleMethod {
     Lightness,
     Average,
     Luminosity,
-    Desaturation,
+    RootMeanSquare,
     RedChannel,
     GreenChannel,
     BlueChannel,
@@ -14,6 +14,5 @@ enum class GrayscaleMethod {
 };
 
 void convertToGrayscale(const std::vector<std::vector<std::array<int, 3>>>& rgbImage,
-                        std::vector<std::vector<int>>& grayscaleImage,
                         int rows, int cols,
-                        GrayscaleMethod method);
+                        GrayscaleMethod method, std::vector<std::vector<int>>& grayscaleImage);

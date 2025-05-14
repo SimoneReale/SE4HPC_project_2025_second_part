@@ -10,9 +10,8 @@
 
 
 void convertToGrayscale(const std::vector<std::vector<std::array<int, 3>>>& rgbImage,
-                        std::vector<std::vector<int>>& grayscaleImage,
                         int rows, int cols,
-                        GrayscaleMethod method) {
+                        GrayscaleMethod method, std::vector<std::vector<int>>& grayscaleImage) {
     grayscaleImage.resize(rows, std::vector<int>(cols, 0));
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
@@ -30,8 +29,8 @@ void convertToGrayscale(const std::vector<std::vector<std::array<int, 3>>>& rgbI
                 case GrayscaleMethod::Luminosity:
                     gray = static_cast<int>(0.21 * R + 0.72 * G + 0.07 * B);
                     break;
-                case GrayscaleMethod::Desaturation:
-                    gray = (std::max({R, G, B}) + std::min({R, G, B})) / 2;
+                case GrayscaleMethod::RootMeanSquare:
+                    gray = static_cast<int>(std::sqrt((R * R + G * G + B * B) / 3.0));
                     break;
                 case GrayscaleMethod::RedChannel:
                     gray = R;
