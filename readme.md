@@ -19,7 +19,7 @@ This project provides a utility to convert `.ppm` images to `.pgm` format using 
   - Converts all `.ppm` images in the input folder.
   - Saves the converted `.pgm` images in the output folder.
 
-- **Some Error Handling stuff**:
+- **Some Error Handling stuff (already handled for you):**:
   - Validates input arguments.
   - Handles invalid grayscale methods.
   - Skips files that cannot be read or written.
